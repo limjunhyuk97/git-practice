@@ -19,10 +19,10 @@
 ![History](https://user-images.githubusercontent.com/59442344/110058817-6e175c80-7da6-11eb-96ea-088c9c463357.jpg)
 
   - **History** : branch에 commit한 내용들을 GUI 환경에서 깔끔하게 보여줌
-  - **origin** : origin은 원격 저장소의 닉네임.
+  - **master** : Git이 제공하는 기본적인 branch 이름, 보통 로컬저장소의 버전 상태를 가리킨다.
+  - **origin** : 원격 저장소의 닉네임.
     - $git remote add **origin** " ... " : 원격 저장소의 닉네임을 origin으로 저장하라는 git 명령.
-  - **origin / master** : origin / master은 원격저장소의 버전
-  - **master** : master은 현재 내 로컬저장소에서의 버전, 우리가 commit 올리는 줄기의 이름.   
+    - **origin / master** : 보통 원격저장소의 버전 상태를 가리킨다.
 
 ### 3. WorkSpace_파일상태
 
