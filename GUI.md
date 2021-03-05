@@ -1,4 +1,4 @@
-# Source Tree
+# Git with GUI
 
 ## Source Tree란?
   - Git을 통한 버전관리를 GUI 환경에서 도와주는 프로그램
