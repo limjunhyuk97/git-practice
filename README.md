@@ -57,6 +57,7 @@
   - **master** : Git이 제공하는 기본적인 branch 이름, 보통 로컬저장소의 버전 상태를 가리키며, 새로운 commit을 master 위에 올린다.
   - **origin** : 원격 저장소의 닉네임이며, 다른 이름으로 변경 가능. 원격 저장소의 현재상태를 사리키는 꼬리표.
     - $git remote add **origin** " ... " : 원격 저장소의 닉네임을 origin으로 저장하라는 git 명령.
+    - **git push origin master** : master의 모든 새로운 commit들을 origin위에 올리는 명령.
     - **origin / master** : 보통 원격저장소의 버전 상태를 가리킨다.
   - **head** : 커밋들을 자유롭게 가리킬수 있는 포인터이다. head 포인터를 통해서, branch를 넘나들 수 있다.
 
