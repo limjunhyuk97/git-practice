@@ -23,7 +23,7 @@
   - **$ git add ...**
     - ... 파일의 커밋을 위해 변경된 사항을 반영하여 stage에 추가
 
-### git commit
+### git commit   
 
   - **$ git commit -m " ... "**
     - add 명령어로 stage로 올린 파일에 대해서, 로컬 저장소의 commit 저장소에 저장
@@ -38,7 +38,7 @@
     - log 명령어는 최신 커밋부터, 여태까지의 커밋 내용을 보여준다
 
 ### git checkout
-  - 
+  - 이전 commit으로의 버전 변경을 가능하게 한다.
 
   - **$ git checkout (특정 버전의 커밋 아이디)**
     - 특정 버전의 커밋 아이디는 log 명령어를 통해서 확인할 수 있다.
@@ -52,12 +52,12 @@
 
 ### git push
 
-  - **$ git push origin master** -> GitHub 계정 입력 후 동기화
+  - **$ git push origin master** -> GitHub 계정 입력 후 동기화   
     - 원격 저장소로 git으로 관리한 버전내용(commit)들을 push 함
 
 ### git clone
 
-  - **$ git clone (리포지토리 주소)**
+  - **$ git clone (리포지토리 주소)**   
     - 원격 저장소의 리포지토리에 있는 내용들을 로컬 저장소(워킹 디렉토리)로 끌어온다.
     - mac 환경에서, clone하여 저장할 로컬저장소에서의 위치를 먼저 지정해주어야 한다.
     - clone하면 자동으로 origin이라는 이름이 원격 저장소의 별칭으로 생성된다.
