@@ -2,10 +2,15 @@
 
 ## CLI Git Command
 
+### git init
+
  - **$ git init**
-   - git 로컬 저장소 생성
+   - git 로컬 저장소 생성 (또는 초기화)
    - .git 폴더 생성
    - git으로 버전관리를 시작할 폴더를 지정
+
+### git config
+  - 깃에 대한 설정을 추가, 변경, 삭제하는 명령어 이다.
 
   - **$ git config --global user.email "...@....com"**
     - 버전관리를 위한 내 이메일정보 등록
@@ -13,8 +18,12 @@
   - **$ git config --global user.name "jun hyuk lim"**
     - 버전관리를 위한 내 이름 정보 등록
 
+### git add
+
   - **$ git add ...**
     - ... 파일을 커밋에 추가
+
+### git commit
 
   - **$ git commit -m " ... "**
     - add한 파일에 ...의 설명을 추가해서 commit
@@ -22,8 +31,12 @@
     - -m 은 message를 의미함
     - -m 을 통해서 설명을 잘 적어두어야 후에 버전 관리 (수정, 개선)에 용이함
 
+### git log
+
   - **$ git log**
     - log 명령어는 최신 커밋부터, 여태까지의 커밋 내용을 보여준다
+
+### git checkout
 
   - **$ git checkout (특정 버전의 커밋 아이디)**
     - 특정 버전의 커밋 아이디는 log 명령어를 통해서 확인할 수 있다.
@@ -35,8 +48,23 @@
     - 가장 상위 버전으로 head를 이동시킨다.
     - 가장 상위 버전에 head가 위치할때는 바로 이전 버전으로 head를 이동시킨다.
 
-  - **$ git remote add origin " ...(GitHub 리포지토리 주소) "**
-    - 로컬 저장소에 원격 저장소(GitHub)의 주소를 알려준다.
+### git push
 
   - **$ git push origin master** -> GitHub 계정 입력 후 동기화
     - 원격 저장소로 git으로 관리한 버전내용(commit)들을 push 함
+
+### git clone
+
+  - **$ git clone (리포지토리 주소)**
+    - 원격 저장소의 리포지토리에 있는 내용들을 로컬 저장소(워킹 디렉토리)로 끌어온다.
+    - mac 환경에서, clone하여 저장할 로컬저장소에서의 위치를 먼저 지정해주어야 한다.
+    - clone하면 자동으로 origin이라는 이름이 원격 저장소의 별칭으로 생성된다.
+
+### git remote 
+
+  - **git remote -v**
+    - 해당 로컬 리포지토리와 연결되어있는 remote 저장소의 단축이름과 주소URL을 알 수 있다.
+
+  - **$ git remote add origin ...(GitHub 리포지토리 주소)**
+    - 로컬 저장소에 원격 저장소(GitHub)의 주소를 알려준다.
+    - 즉, 로컬 저장소(워킹 디렉토리)에 새로운 원격 저장소를 추가한다.

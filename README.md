@@ -1,10 +1,10 @@
-## Git 이 무엇인가..?!   
+## 01. Git 이 무엇인가..?!   
   - **버전 관리를 도와주는 시스템**이다.
   - **Git의 동작 방식**
     - 커밋에서 발생하는 차이들만 저장하는 것이 아니라, 커밋된 파일 전체인 스냅샷을 저장한다.
     - 바뀌지 않은 파일은 이전 파일의 링크만 저장하기 때문에, 용량을 많이 잡아먹지 않고, 계산도 필요 없다.
 
-## Git 상태/공간 뜯어보기
+## 02. Git 상태/공간 뜯어보기
 
 ![git_4status](https://user-images.githubusercontent.com/59442344/110064253-154cc180-7db0-11eb-8eb8-78387c2dc354.jpg)
 
@@ -21,9 +21,17 @@
       - **수정없음 (unmodified)** : commit된 내용과 WorkSpace에 존재하는 내용에 차이가 없는 파일
       - **수정함 (modified)** : staged되지 않고, commit된 내용과 WorkSpace에 존재하는 내용에 차이가 존재하는 파일
 
-## Git 협업
+## 03. Git file (System/Global/Local file) 
+  - **System 설정 파일** : 전체 system 사용자에게 적용된다.
+    - git config --system 명령어
+  - **Global 설정 파일** : 한 사용자의 전체 git 저장소에 적용된다.
+    - git config --global 명령어
+  - **Local 설정 파일** : 하나의 저장소에만 적용된다.
+    - git config --local 명령어
 
-## Git 용어   
+## 04. Git 협업
+
+## 05. Git 용어   
 
   - **원격 저장소 (repository)** : GitHub에서 협업할 공간. (다른 개발자들과 같이 버전관리할 공간.)
   - **로컬 저장소** : 내 컴퓨터에서 Git으로 버전관리 중인 공간
