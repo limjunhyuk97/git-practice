@@ -55,6 +55,22 @@
   - **$ git push origin master** -> GitHub 계정 입력 후 동기화   
     - 원격 저장소로 git으로 관리한 버전내용(commit)들을 push 함
 
+### git pull / fetch
+  - 'git init' -> 'git remote add origin ...' 를 수행한 다음에 원격 저장소의 내용을 끌어올 수 있다.
+  - pull : 원격저장소의 소스를 가져오고, 해당 저장소의 소스가 더 최신버전이라면 지금의 버전을 해당 버전에 맞춰 올린다.
+  - fetch : 단지 소스를 가져올 뿐 merge 하지는 않는다
+
+  - **$ git pull origin<원격 저장소명> master<branch명>**
+    - 원격저장소에서 fetch 명령어로 가져온 뒤, merge까지 한번에 수행하여 실제 파일의 내용이 변경되는 명령어
+  - **$ git fetch origin<원격 저장소명>**
+    - fetch 명령어를 통해서 변경된 내용을 가져온다.
+
+
+### git diff
+  
+  - **$ git diff HEAD origin/master**
+    - git fetch 수행 후에, 원격 저장소에서 받아온 상태와 로컬 저장소의 상태가 어디서 다른지 확인할 수 있다.
+
 ### git clone
 
   - **$ git clone (리포지토리 주소)**   
