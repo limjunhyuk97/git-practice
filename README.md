@@ -44,6 +44,25 @@
       - **[master] pointer** : Git이 제공하는 기본 브랜치(포인터)
       - **[HEAD] pointer** : 브랜치 사이를 넘나들 수 있게 해주는 포인터
         - detached HEAD 상태 : master 포인터에서 HEAD 포인터가 분리된 상태
+    - **Branch**를 만들 때에는 base를 잘 설정해야 한다. (어떤 시점에서 브랜치를 뻗어나갈 것인가?)
+    - **[master] pointer**를 기준으로 branch를 생성한 후에, 협업한 내용들을 다시 **merge** 한다.
+- **Merge** : 병렬로 뻗어나간 가지들간의 합집합을 구하는 기능이다.
+- **Merge의 3가지 경우**
+  - **Merge commit** : 여러 branch들을 합치는 과정에서 새로운 상태를 새롭게 저장하는 commit
+    - 어떤 브랜치를 기준으로 병합할지를 선택하는 과정이 요구된다.
+  - **Fast-Forward** : 여러 branch들을 합치는 과정에서 어떤 branch가 다른 branch를 포함하여 굳이 새로운 상태를 새롭게 저장할 필요가 없는 commit
+  - **Conflict** : 여러 branch를 합치는 과정에서 중첩된 상태가 발견되어 충돌이 일어난 상황
+    - Conflict가 발생하면 충돌이 난 부분을 확인하여, 어떤 것을 남길지를 수동으로 택하고 병합하는 과정이 요구된다.
+- **Pull Request**
+  - master branch에 merge해도 되는지에 대해서 협력자에게 허락을 요청하는 과정!
+  - **base branch / compare branch**
+    - **base branch** : 병합 결과물이 올라갈 기준이 되는 브랜치
+    - **compare branch** : base branch와 비교대상이 되는 브랜치
+  - **Compare & pull request** : 원격 저장소에 커밋을 수행한 경우, 협력자에게 pull request를 보낸다.
+  - **new pull request** : 다른 branch로 pull request를 직접 보내거나, 직접 설정을 변경하고 싶은 경우 사용.
+- **Tag** : 특정 커밋, 상태에 버전을 붙여주거나, 별칭을 붙여주는 역할을 한다.
+  - branch와 마찬가지로 커밋을 가리키는 포인터이다.
+  - push해주어야 원격저장소에서도 확인할 수 있다.
 
 
 ## 05. Git 용어   
@@ -57,7 +76,7 @@
   - **GitHub** : Git을 통해 관리하는 프로젝트를 올려두는 공간
   - **GUI** : Graphic User Interface, 마우스로 명령 입력
   - **CLI** : Command Line Interface, 커멘드 라인으로 명령어 입력
-  - **Git Bash** : CLI 방식으로 Git을 이용하게 해주는 환경
+  - **Git Bash** : CLI 방식으로 Git을 이용하게 해주는 터미널 환경
   - **commit** : 버전을 갱신하는 것, 새로운 버전으로 생성된 파일
   - **log** : 모든 commit 확인
   - **checkout** : 원하는 지점의 버전으로 파일을 되돌릴 수 있다.
