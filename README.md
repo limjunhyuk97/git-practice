@@ -7,6 +7,7 @@
     - 원격저장소의 주소
     - 버전 관리한 데이터 등..
 
+
 ## 02. Git 상태/공간 뜯어보기
 
 ![git_4status](https://user-images.githubusercontent.com/59442344/110064253-154cc180-7db0-11eb-8eb8-78387c2dc354.jpg)
@@ -24,6 +25,7 @@
       - **수정없음 (unmodified)** : commit된 내용과 WorkSpace에 존재하는 내용에 차이가 없는 파일
       - **수정함 (modified)** : staged되지 않고, commit된 내용과 WorkSpace에 존재하는 내용에 차이가 존재하는 파일
 
+
 ## 03. Git file (System/Global/Local file) 
   - **System 설정 파일** : 전체 system 사용자에게 적용된다.
     - git config --system 명령어
@@ -32,11 +34,19 @@
   - **Local 설정 파일** : 하나의 저장소에만 적용된다.
     - git config --local 명령어
 
+
 ## 04. Git 협업
+  - **Branch** : 여러 명의 협업자들이 줄기를 나누어 프로젝트를 작업할 수 있게 도와주는 기능
+    - **여러 명**이 **작업의 갈래를 나누지 않은 상태**라면
+      - **먼저 푸시**한 커밋은 **정상**적으로 올라간다
+      - **나중에 푸시**한 커밋은 **'낡은 커밋에 푸시하지 말라'는 오류가 발생**한다.
+    - **Branch**는 단순한 포인터이다.
+      - **[master] pointer** : Git이 제공하는 기본 브랜치(포인터)
+      - **[HEAD] pointer** : 브랜치 사이를 넘나들 수 있게 해주는 포인터
+        - detached HEAD 상태 : master 포인터에서 HEAD 포인터가 분리된 상태
 
 
 ## 05. Git 용어   
-
   - **원격 저장소 (repository)** : GitHub에서 협업할 공간. (다른 개발자들과 같이 버전관리할 공간.)
   - **로컬 저장소** : 내 컴퓨터에서 Git으로 버전관리 중인 공간
     - 특정 폴더 내의 숨겨진 .git 폴더가 바로 로컬 저장소 이다.
