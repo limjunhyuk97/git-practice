@@ -22,6 +22,7 @@
 
   - **$ git add ...**
     - ... 파일의 커밋을 위해 변경된 사항을 반영하여 stage에 추가
+    - git add -A : 모든 tracked, untracked change 들을 stage로 올린다.
 
 ### git commit   
 
