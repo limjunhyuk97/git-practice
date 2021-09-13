@@ -55,17 +55,37 @@
     - Conflict가 발생하면 충돌이 난 부분을 확인하여, 어떤 것을 남길지를 수동으로 택하고 병합하는 과정이 요구된다.
 - **Pull Request**
   - master branch에 merge해도 되는지에 대해서 협력자에게 허락을 요청하는 과정!
-  - **base branch / compare branch**
-    - **base branch** : 병합 결과물이 올라갈 기준이 되는 브랜치
-    - **compare branch** : base branch와 비교대상이 되는 브랜치
-  - **Compare & pull request** : 원격 저장소에 커밋을 수행한 경우, 협력자에게 pull request를 보낸다.
-  - **new pull request** : 다른 branch로 pull request를 직접 보내거나, 직접 설정을 변경하고 싶은 경우 사용.
+  - pull request를 보내기 전에는 원본 저장소의 README.md 파일의 contribution guideline에 대한 내용이 있는지 확인하는 것이 좋다.
+  - **fork나, branch**를 통해서 원본 저장소에 pull request를 보낼 수 있다.
+  - **pull request 보내기**
+    - **base branch / compare branch**
+      - **base branch** : 병합 결과물이 올라갈 기준이 되는 브랜치
+      - **compare branch** : base branch와 비교대상이 되는 브랜치
+    - **Compare & pull request** : 원격 저장소에 커밋을 수행한 경우, 협력자에게 pull request를 보낸다.
+    - **new pull request** : 다른 branch로 pull request를 직접 보내거나, 직접 설정을 변경하고 싶은 경우 사용.
+  - **pull request 받기**
+    - **[File changed] : 파일 변경사항을 확인할 수 있다.**
+    - **[Comment] : 명시적 승인 없이 코멘트만 남긴다.**
+    - **[Approve] : 코멘트를 남기고 merge를 승인한다.**
+    - **[Request changes] : 코멘트를 남기고 수정을 요청한다.**
 - **Tag** : 특정 커밋, 상태에 버전을 붙여주거나, 별칭을 붙여주는 역할을 한다.
   - branch와 마찬가지로 커밋을 가리키는 포인터이다.
   - push해주어야 원격저장소에서도 확인할 수 있다.
+- **fork**
+  - 원격 저장소에서는 fork할 시점의 원본 저장소의 히스토리만 알 수 있다.
+  - 오픈소스를 다룰 때, 원본 저장소로의 pull request에서 발생가능한 conflict를 피하기 위해서 원본 저장소의 **history** 또한 고려할 필요가 있다.
+    - source tree에서, **로컬에 연결된 원격**으로 **'upstream'이라는 관용적인 이름을 사용**하는 **원본 리포지토리를 추가**할 수 있다!
+- **rebase(재배치), fetch(새로고침)**
+  - 예전 코드를 기준으로 갱신한 사항을, **마치 원본의 최신코드를 기준으로 갱신한 것처럼 이력을 조작**하는 것.
+  - rebase를 사용하면, 원본의 변경을 가져와 merge하고, 그것을 다시 원본에 pull request할 때 발생하는 **불필요한 merge결과가 생성되는 것을 방지**할 수 있다.
+  - rebase를 수행하면 히스토리가 강제조작되기 때문에, 다른 사람이 히스토리를 보고있다면 완전히 꼬이게 된다. 그러므로, **혼자 쓰는 브랜치에서 수행해야 함**
+    - **원본 저장소의 이력을 fetch해서 가져온다.**
+    - **내가 수정한 내용을 원본 저장소의 끝에 재배치**
+    - **발생하는 충돌들이 모두 해결될 때까지 계속 '재배치 계속'**
+    - **모든 재배치가 완료되면 master branch가 원본의 최신 branch 앞으로 재배치 됨**
 
 
-## 05. Git 용어   
+## 05. Git / GitHub 용어   
   - **원격 저장소 (repository)** : GitHub에서 협업할 공간. (다른 개발자들과 같이 버전관리할 공간.)
   - **로컬 저장소** : 내 컴퓨터에서 Git으로 버전관리 중인 공간
     - 특정 폴더 내의 숨겨진 .git 폴더가 바로 로컬 저장소 이다.
@@ -82,11 +102,33 @@
   - **checkout** : 원하는 지점의 버전으로 파일을 되돌릴 수 있다.
   - **push** : 로컬 저장소 -> 원격 저장소로 commit을 올리는 것.
   - **pull** : 원격 저장소 -> 로컬 저장소로 commit을 내려받는 것.
-  - **branch** : 특정 버전 위치를 가리키는 포인터이다.
+  - **pull request** : 다른 브랜치에서, 혹은 다른 원격 저장소에서, 원본 저장소의 소유자에게 commit을 통한 병합을 요청하는 것.
+  - **branch** : 특정 버전 위치를 가리키는 포인터이다. 커밋에서 일어난 분기, 혹은 코드 분기점을 만드는 것.
+  - **fork** : 브랜치를 포함한 원본 저장소의 모든 커밋 이력을 원격 저장소로 통째로 옮긴다. 다른 이의 원격저장소 내 계정에 통째로 복사.
+  
+ |branch|fork|
+ |:---:|:---:|
+ |하나의 원본 저장소에서 분기 나눔|여러 원격 저장소로 분기|
+ |하나의 원본 저장소에서 커밋 이력 확인 가능|원본 저장소에 영향을 미치지 않고, fork한 저장소에서 자유롭게 코드 수정 가능|
+ |다수의 사용자의 커밋을 관리하기에 불편하다|원본 저장소의 커밋확인을 위한 주소 추가가 필요하다|
+
   - **master** : Git이 제공하는 기본적인 branch 이름, 보통 로컬저장소의 버전 상태를 가리키며, 새로운 commit을 master 위에 올린다.
   - **origin** : 원격 저장소의 닉네임이며, 다른 이름으로 변경 가능. 원격 저장소의 현재상태를 사리키는 꼬리표.
     - $git remote add **origin** " ... " : 원격 저장소의 닉네임을 origin으로 저장하라는 git 명령.
     - **git push origin master** : master의 모든 새로운 commit들을 origin위에 올리는 명령.
     - **origin / master** : 보통 원격저장소의 버전 상태를 가리킨다.
   - **head** : 커밋들을 자유롭게 가리킬수 있는 포인터이다. head 포인터를 통해서, branch를 넘나들 수 있다.
+  - **OAuth** : 비밀번호 제공 없이 다른 웹사이트 상의 자신의 정보에 대해, 웹사이트나, 애플리케이션에 접근권한을 부여하는 접근위임응 위한 개방형 표준.
+  - **fetch** : '새로고침' 기능으로, 원본저장소 혹은 원격 저장소의 이력을 업데이트 하되, 코드에 영향을 주지 않는다. (pull은 코드까지 변경시킨다)
+
+ 
+## 06. Git Tip
+  - Authentication 오류의 해결..
+    - CLI 환경
+      - 2021.8.13 부로 Git에서 OAuth를 제공하지 않기에, personal token을 만들어 사용하여야 함.
+      - 아래의 방식으로 원격 저장소 URL다시 설정
+      - 그 후, 비밀번호 작성하라 할때, 발급한 토큰을 입력하면 재연결 가능.
+```git
+git remote set-url origin https://YOURUSERNAME@github.com/USERNAME/REPOSITORY.git 
+```
 

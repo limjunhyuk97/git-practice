@@ -59,6 +59,9 @@
   - **$ git push origin master** -> GitHub 계정 입력 후 동기화   
     - 원격 저장소로 git으로 관리한 버전내용(commit)들을 push 함
 
+  - **$ git push -u origin master --force**
+    - rebase를 사용하여 강제 push가 필요한 경우 사용한다.
+
 ### git pull / fetch
   - 'git init' -> 'git remote add origin ...' 를 수행한 다음에 원격 저장소의 내용을 끌어올 수 있다.
   - pull : 원격저장소의 소스를 가져오고, 해당 저장소의 소스가 더 최신버전이라면 지금의 버전을 해당 버전에 맞춰 올린다.
