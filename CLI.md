@@ -70,16 +70,18 @@
 - **$ git add .**
   - 수정된 전체 파일 중 .gitignore로 지정한 무시하고자 하는 파일을 제외하고 stage에 올린다.
 
-- **git add - A**
+- **git add -A**
     -모든 tracked, untracked change 들을 stage로 올린다.
 
 
 
 
 ### git reset
+  - soft, mixed, hard 옵션을 사용할 수 있다.
 
 - **$ git reset <\파일명>**
   - modify된 어떤 파일의 변경사항을 다시 unstage 시킨다.
+  - **별다른 조건 없이** 사용하면 **mixed reset**으로 동작한다.
 
 
 
