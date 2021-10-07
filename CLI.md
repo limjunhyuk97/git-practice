@@ -139,6 +139,7 @@
 
 - **$ git checkout (특정 버전의 커밋 아이디)**
   - 특정 버전의 커밋 아이디는 log 명령어를 통해서 확인할 수 있다.
+  - 특정 버전의 커밋으로 HEAD가 이동한다.
 
 - **$ git checkout -b  " ... "**
   - 현재 커밋(버전)에서 새로운 " ... "설명 브랜치를 생성한다.
@@ -152,16 +153,18 @@
 
 ### git push
 
-- **$ git push origin master** -> GitHub 계정 입력 후 동기화
+- **$ git push [origin(원격 저장소)] [master(로컬 저장소 브랜치)]** -> GitHub 계정 입력 후 동기화
   - 원격 저장소로 git으로 관리한 버전내용(commit)들을 push 함
 
-- **$ git push -u origin master --force**
+- **$ git push -u origin [로컬 브랜치 이름] --force**
   - rebase를 사용하여 강제 push가 필요한 경우 사용한다.
 
-- **$ git push [-u] [원격 저장소 이름] [브랜치 이름]**
-  - **현재 브랜치**에서 생성된 커밋들을 **원격저장소로** 올린다.
+- **$ git push -u origin [로컬 브랜치 이름]**
+  - **현재 로컬 브랜치**에서 생성된 커밋들을 **원격저장소로** 올린다.
   - -u 옵션으로 업스트림 등록할 수 있다.
 
+- **$ git push --set-upstream [origin] [원격 저장소 이름]**
+  - **현재 로컬 브랜치**에서 생성된 커밋들을 새롭게 지정한 upstream **원격저장소 branch**로 올린다.
 
 
 ### git pull / fetch
@@ -246,5 +249,17 @@
 
 ### git help
 
-  - **$ git help <명령어>**
-    - 특정 명령어에 대한 도움말을 확인할 수 있다.
+- **$ git help <명령어>**
+  - 특정 명령어에 대한 도움말을 확인할 수 있다.
+
+
+
+
+### git branch
+
+- **$ git branch**
+  - 현재 로컬에 존재하는 branch들을 확인한다.
+  - 현재 브랜치를 확인할 수 있다.
+
+- **$ git branch -m [OLD_BRANCH] [NEW_BRANCH]**
+  - OLD_BRANCH의 이전 로컬 브랜치 명을 NEW_BRANCH의 새로운 로컬 브랜치 명으로 변경한다.
