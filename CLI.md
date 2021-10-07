@@ -2,6 +2,18 @@
 
 ## CLI Git Command
 
+- 새로운 로컬 저장소의 생성 : git init
+- 로컬 저장소의 설정 변경 : git config
+- 로컬 저장소에 commit : git add, git commit
+- 원격 저장소로 push : git push
+- 로컬 저장소로 pull : git pull
+- 브랜치 이동 : git checkout
+- 브랜치 생성 : git checkout, git branch
+- 커밋 히스토리들 확인 : git log
+- 커밋 사이 HEAD 이동 : git checkout
+- 커밋 사이 Branch 이동 : git reset, git rebase, 
+
+
 
 
 ### git init
@@ -138,20 +150,26 @@
 - 이전 commit으로 HEAD 이동을 가능하게 한다.
 - 다른 branch로 이동할 수 있게 해준다.
 
-- **$ git checkout [특정 커밋 아이디]**
+- **$ git checkout <커밋 아이디>**
   - 특정 버전의 커밋 아이디는 log 명령어를 통해서 확인할 수 있다.
   - 특정 버전의 커밋으로 HEAD가 이동한다.
 
-- **$ git checkout -b  " ... "**
-  - 현재 커밋(버전)에서 새로운 " ... "설명 브랜치를 생성한다.
+- **$ git checkout <브랜치 이름>**
+  - 현재 branch에서 다른 branch로 이동한다.
+
+- **$ git checkout -b  <브랜치 이름> <커밋 아이디>**
+  - [커밋 아이디]를 명시하지 않을 경우, 현재 커밋(버전)에서 새로운 [브랜치 이름] 브랜치를 생성한다.
+  - [커밋 아이디]를 명시한 경우, [커밋 아이디] 위치에서 새로운 [브랜치 이름] 브랜치를 생성한다.
 
 - **$ git checkout -**
   - 가장 상위 버전으로 HEAD를 이동시킨다.
-  - 가장 상위 버전에 head가 위치할때는 바로 이전 버전으로 head를 이동시킨다.
+  - 가장 상위 버전에 head가 위치할때는 바로 이전 버전으로 HEAD를 이동시킨다.
 
-- **$ git checkout [브랜치 이름]**
-  - 현재 branch에서 다른 branch로 이동한다.
+- **$ git checkout ~n**
+  - 현재 브랜치에서 n개 만큼 아래의 자식 커밋으로 HEAD를 내려보낸다.
 
+- **$ git checkout [브랜치 이름]^**
+  - 현재 브랜치에서 ^의 갯수 만큼 아래의 자식 커밋으로 HEAD를 내려보낸다.
 
 
 
@@ -265,12 +283,16 @@
   - 현재 로컬에 존재하는 branch들을 확인한다.
   - 현재 브랜치를 확인할 수 있다.
 
-- **$ git branch -d [브랜치 이름]**
+- **$ git branch [-f] <브랜치 이름> [커밋 체크섬]**
+  - **$ git branch <브랜치 이름>** : 현재 브랜치에 새로운 <브랜치 이름>을 갖는 브랜치를 생성한다.
+  - ****
+
+- **$ git branch -d <브랜치 이름>**
   - 브랜치를 삭제한다.
   - HEAD 브랜치나, 병합되지 않은 브랜치를 삭제할 수 없다.
 
-- **$ git branch -D [브랜치 이름]]**
+- **$ git branch -D <브랜치 이름>**
   - 브랜치를 강제로 삭제한다.
 
-- **$ git branch -m [OLD_BRANCH] [NEW_BRANCH]**
+- **$ git branch -m <OLD_BRANCH> <NEW_BRANCH>**
   - OLD_BRANCH의 이전 로컬 브랜치 명을 NEW_BRANCH의 새로운 로컬 브랜치 명으로 변경한다.
