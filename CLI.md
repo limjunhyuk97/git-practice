@@ -96,9 +96,17 @@
 
 - soft, mixed, hard 옵션을 사용할 수 있다.
 
-- **$ git reset <\파일명>**
-  - modify된 어떤 파일의 변경사항을 다시 unstage 시킨다.
-  - **별다른 조건 없이** 사용하면 **mixed reset**으로 동작한다.
+- **$ git reset --soft <파일명>**
+  - **변경한 내용은 워킹트리에 남아있다.**
+  - 단, commit한 적이 없는 것처럼 **staged된 상태로** 바뀐다.
+
+- **$ git reset --mixed <파일명>**
+  - **변경한 내용은 워킹트리에 남아있다.**
+  - 단, commit한 적이 없는 것처럼 **unstaged된 상태로** 바뀐다.
+
+- **$ git reset --hard <파일명>**
+  - **변경한 내용은 워킹트리에서 사라진다.**
+  - 또한, 아예 사라지기에, git status로 확인하면, working tree가 깨끗하다고 나온다.
 
 
 
@@ -190,6 +198,8 @@
 
 - **$ git push --set-upstream [origin] [원격 저장소 이름]**
   - **현재 로컬 브랜치**에서 생성된 커밋들을 새롭게 지정한 upstream **원격저장소 branch**로 올린다.
+
+
 
 
 ### git pull / fetch
