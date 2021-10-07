@@ -9,9 +9,10 @@
 - 로컬 저장소로 pull : git pull
 - 브랜치 이동 : git checkout
 - 브랜치 생성 : git checkout, git branch
+- 브랜치 합치지 : git merge
 - 커밋 히스토리들 확인 : git log
 - 커밋 사이 HEAD 이동 : git checkout
-- 커밋 사이 Branch 이동 : git reset, git rebase, 
+- 커밋 사이 Branch 이동 : git reset, git rebase, git revert
 
 
 
@@ -147,10 +148,11 @@
 
 ### git checkout
 
-- 이전 commit으로 HEAD 이동을 가능하게 한다.
+- 이전 commit으로의 버전 변경을 가능하게 한다.
 - 다른 branch로 이동할 수 있게 해준다.
 
 - **$ git checkout <커밋 아이디>**
+
   - 특정 버전의 커밋 아이디는 log 명령어를 통해서 확인할 수 있다.
   - 특정 버전의 커밋으로 HEAD가 이동한다.
 
@@ -168,8 +170,9 @@
 - **$ git checkout ~n**
   - 현재 브랜치에서 n개 만큼 아래의 자식 커밋으로 HEAD를 내려보낸다.
 
-- **$ git checkout [브랜치 이름]^**
+- **$ git checkout <브랜치 이름>^**
   - 현재 브랜치에서 ^의 갯수 만큼 아래의 자식 커밋으로 HEAD를 내려보낸다.
+
 
 
 
