@@ -94,7 +94,7 @@
 
 ### git reset
 
-- branch의 위치를 변경시키는 명령이다.
+- branch가 가리키는 위치를 변경시키는 명령이다.
 - soft, mixed, hard 옵션을 사용할 수 있다.
 
 - **$ git reset --soft <파일명>**
@@ -183,6 +183,13 @@
 
 - **$ git checkout <브랜치 이름>^n**
   - 현재 브랜치의 n번째 부모를 가리키는 것으로, merge 처럼 부모가 둘 이상인 커밋에서만 의미가 있다.
+
+
+
+
+### git rebase
+
+- rebase
 
 
 
