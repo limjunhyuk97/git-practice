@@ -7,7 +7,7 @@
 - 로컬 저장소에 commit : git add, git commit
 - 원격 저장소로 push : git push
 - 로컬 저장소로 pull : git pull
-- 브랜치 이동 : git checkout
+- 브랜치 이동 : git branch, git rqeset 
 - 브랜치 생성 : git checkout, git branch
 - 브랜치 합치지 : git merge
 - 커밋 히스토리들 확인 : git log
@@ -94,6 +94,7 @@
 
 ### git reset
 
+- branch의 위치를 변경시키는 명령이다.
 - soft, mixed, hard 옵션을 사용할 수 있다.
 
 - **$ git reset --soft <파일명>**
@@ -177,11 +178,11 @@
   - 가장 상위 버전으로 HEAD를 이동시킨다.
   - 가장 상위 버전에 head가 위치할때는 바로 이전 버전으로 HEAD를 이동시킨다.
 
-- **$ git checkout ~n**
-  - 현재 브랜치에서 n개 만큼 아래의 자식 커밋으로 HEAD를 내려보낸다.
+- **$ git checkout <브랜치 이름>~n**
+  - 현재 브랜치에서 n번째 위쪽 조상으로 checkout 수행한다.
 
-- **$ git checkout <브랜치 이름>^**
-  - 현재 브랜치에서 ^의 갯수 만큼 아래의 자식 커밋으로 HEAD를 내려보낸다.
+- **$ git checkout <브랜치 이름>^n**
+  - 현재 브랜치의 n번째 부모를 가리키는 것으로, merge 처럼 부모가 둘 이상인 커밋에서만 의미가 있다.
 
 
 
@@ -297,6 +298,7 @@
 - branch 이동
 - branch 생성
 - branch 확인
+- branch 삭제
 - branch 명 변경
 
 - **$ git branch [-v]**
