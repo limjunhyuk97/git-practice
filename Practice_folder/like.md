@@ -6,3 +6,4 @@
 =======
 rebase 3-way merge
 >>>>>>> b822087 (rebase 3-way commit 추가)
+rebase practice
