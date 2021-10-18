@@ -106,6 +106,8 @@
       - 모든 재배치가 완료되면 **master branch가 원본의 최신 branch 앞으로 재배치** 됨
     - **rebase할만한 commit이 없는 경우** : 아무 작업도 수행하지 않음
     - **fast-forward 가능한 경우** : fast-forward로 rebase 수행
+  - **원격 저장소에 push한 브랜치는 rebase하지 않는 것이 원칙이다!**
+    - 원격 저장소에 push한 브랜치를 다른 곳 앞으로 rebase하면, 내용이 유지되면서 위에 더 추가되는 양상이 아니라, 아상하게 꼬여버리는 수가 있다.
 
 <img src="https://user-images.githubusercontent.com/59442344/136898606-222c1156-7a87-4a92-a3c3-62223553abe3.png" width="70%" height="23%">
 
@@ -194,7 +196,7 @@
  |:---:|:---:|:---:|
  |특징|merge commit 생성|현재 commit 수정해서 대상 위로 재배치|
  |장점|충돌이 한번만 발생|히스토리가 깔끔함|
- ||||
+ |단점|트리가 지저분해짐|여러번 충돌이 발생 가능함|
 
 
 
