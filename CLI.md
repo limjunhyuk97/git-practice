@@ -189,25 +189,31 @@
 
 ### git rebase
 
-- rebase
+- **$ git rebase <갖다 붙힐 브랜치>**
+  - 현재 브랜치에서 다른 브랜치로, 현재 브랜치에만 존재하는 commit을 재배치시킨다.
+  - fast-forward, merge commit, conflict가 일어날 수 있다.
 
 
 
 
 ### git push
 
-- **$ git push [origin(원격 저장소)] [master(로컬 저장소 브랜치)]** -> GitHub 계정 입력 후 동기화
+- **$ git push [origin(원격 저장소 별칭)] [master(로컬 브랜치)]** -> GitHub 계정 입력 후 동기화
   - 원격 저장소로 git으로 관리한 버전내용(commit)들을 push 함
 
-- **$ git push -u origin [로컬 브랜치 이름] --force**
+- **$ git push -u origin [로컬 브랜치] --force**
   - rebase를 사용하여 강제 push가 필요한 경우 사용한다.
 
-- **$ git push -u origin [로컬 브랜치 이름]**
+- **$ git push -u origin [로컬 브랜치]**
   - **현재 로컬 브랜치**에서 생성된 커밋들을 **원격저장소로** 올린다.
   - -u 옵션으로 업스트림 등록할 수 있다.
 
-- **$ git push --set-upstream [origin] [원격 저장소 이름]**
+- **$ git push --set-upstream [origin(원격 저장소)] [원격 브랜치]**
   - **현재 로컬 브랜치**에서 생성된 커밋들을 새롭게 지정한 upstream **원격저장소 branch**로 올린다.
+
+- **$ git push <원격저장소> <태그 이름>**
+  - 원격 저장소에 tag를 push 한다.
+  - tag만 push하고, 다른 commit은 push하지 않는다.
 
 
 
@@ -222,7 +228,7 @@
   - git fetch + git merge 의 명령이다.
   - 즉, **원격의 내용을 가져오고(fetch), 원격의 내용을 반영하여 로컬의 버전을 맞춰 올린다.(merge)**
 
-- **$ git pull \<원격 저장소명(origin)> \<branch명(master)>**
+- **$ git pull \<원격 저장소명(origin)> \< 원격 저장소 branch명(master)>**
   - 원격저장소에서 fetch 명령어로 가져온 뒤, merge까지 한번에 수행하여 실제 파일의 내용이 변경되는 명령어
 
 - **$ git fetch \<원격 저장소명(origin)>**
@@ -244,7 +250,7 @@
 - **$ git diff**
   - commit된 파일 상태와 modified된 파일 상태를 비교한다.
   
-- **$ git diff HEAD origin/master**
+- **$ git diff HEAD origin/master(main)**
   - git fetch 수행 후에, 원격 저장소에서 받아온 상태와 로컬 저장소의 상태가 어디서 다른지 확인할 수 있다.
 
 - **$ git diff --staged**
@@ -258,8 +264,8 @@
 
 ### git clone
 
-- **$ git clone \<리포지토리 주소> [새로운 폴더 명]]**
-  - **원격 저장소의 리포지토리에 있는 내용들을 내가 지정한 위치에 끌고와서 "폴더를 만들고," 그안에 워크스페이스와 로컬저장소를 만들어 준다.**
+- **$ git clone \<리포지토리 주소> [새로운 폴더 명]**
+  - **원격 저장소의 리포지토리를 '폴더' 째로 끌고 온 뒤에," 그안에 워크스페이스와 로컬저장소를 만들어 준다.**
   - mac 환경에서, clone하여 저장할 로컬저장소에서의 위치를 먼저 지정해주어야 한다.
   - clone하면 자동으로 origin이라는 이름이 원격 저장소의 별칭으로 생성된다.
   - **fatal: destination path '...' already exists and is not empty directory.**
@@ -274,9 +280,12 @@
 - **$ git remote -v**
   - 해당 로컬 리포지토리와 연결되어있는 remote 저장소의 단축이름과 주소URL을 알 수 있다.
 
-- **$ git remote add origin \<원격 저장소 이름>**
+- **$ git remote add origin \<원격 저장소 주소>**
   - 로컬 저장소에 원격 저장소(GitHub)의 주소를 알려준다.
   - 즉, 로컬 저장소(워킹 디렉토리)에 새로운 원격 저장소를 추가한다.
+
+- **$ git remote remove origin**
+  - 원래 연결되어 있던 원격 리포지토리 주소와의 연결을 해제한다.
 
 
 
@@ -331,3 +340,13 @@
 
 - **$ git branch -m <OLD_BRANCH> <NEW_BRANCH>**
   - OLD_BRANCH의 이전 로컬 브랜치 명을 NEW_BRANCH의 새로운 로컬 브랜치 명으로 변경한다.
+
+
+
+
+### git tag
+
+- **$ git tag -a -m <메시지> <태그명> [커밋 체크섬]**
+  - -a는 주석있는 태그를 의미한다.
+  - <메시지> 에 태그에 대한 메시지를 작성
+  - [커밋 체크섬] 값을 부여하지 않으면, 현재 HEAD 위치에서 Tag를 생성한다.
