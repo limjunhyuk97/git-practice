@@ -194,6 +194,8 @@
   - 현재 브랜치에서 다른 브랜치로, 현재 브랜치에만 존재하는 commit을 재배치시킨다.
   - fast-forward, merge commit, conflict가 일어날 수 있다.
 
+- **$ git rebase --continue**
+  - rebase에서 conflict를 해결한 뒤에 다시 rebase를 진행할 때, --continue 옵션을 이용한다.
 
 
 

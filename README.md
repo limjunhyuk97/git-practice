@@ -187,6 +187,15 @@
 - **upstream brach(업스트림)** : 로컬 저장소와 연결된 원격 저장소의 branch를 일컫는 단어이다.
 - **relative ref(상대 참조)** : commit checksum(SHA1)이라는 절대값을 통해서 commit 사이를 이동하는 것이 아니라, 현재 commit 위치에서 상대적인 위치값을 바탕으로 이동한다. (HEAD가 이동)
 - **Tag(태그)** : 특정 커밋, 상태에 버전을 붙여주거나, 별칭을 붙여주는 역할을 한다.
+- **3-way merge** : 특정 조상 commit에서 분기한 두개의 브랜치를 다시 merge하는 것을 말한다.
+  - rebase, merge에서 발생할 수 있는 conflict를 해결하고 merge하면 된다. (물론 문제가 없어서 fast-forwarded 되거나, 그냥 merge 될 수도 있다.)
+
+ ||3-way merge|rebase|
+ |:---:|:---:|:---:|
+ |특징|merge commit 생성|현재 commit 수정해서 대상 위로 재배치|
+ |장점|충돌이 한번만 발생|히스토리가 깔끔함|
+ ||||
+
 
 
 
