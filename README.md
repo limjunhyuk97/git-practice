@@ -198,6 +198,13 @@
  |장점|충돌이 한번만 발생|히스토리가 깔끔함|
  |단점|트리가 지저분해짐|여러번 충돌이 발생 가능함|
 
+- **upstream/downstream/origin**
+  - **upstream** : fork의 맥락에서 내가 fork 해서 가져온 오리지널 레포지토리.
+  - **downstream** : 내가 변경하고 있는 내 로컬 리포지토리.
+  - **origin** : fork해서 내 원격으로 끌고 온 원격 리포지토리.
+  - downstream, upstream은 상대적인 개념이다.
+
+
 
 
 

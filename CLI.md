@@ -14,10 +14,25 @@
 - 커밋 사이 HEAD 이동 : git checkout
 - 커밋 사이 Branch 이동 : git reset, git rebase, git revert
 
+## .git 로컬 초기 생성
 
+- **git init 생성**
+  - 리포지토리를 만들고, 해당리포지토리 안으로 들어간다.
+  - git init
+  - git config --global user.name
+  - git config --global user.mail
+  - git remote add origin 원격저장소주소
+  - git pull origin main : origin 의 main branch에서 현재 내 로컬의 master(혹은 main) 브랜치로 가져온다.
+  - git branch : 현재 로컬과 원격에서 끌어온 브랜치간의 이름이 맞는지 확인한다. (맞지 않으면 git branch -m)
+
+- **git clone 생성**
+  - 리포지토리 째로 생성해버리기 때문에, clone 하면 그 위치에 원격 리포지토리 내용 그대로 생성됨
+  - 
 
 
 ### git init
+
+- .git을 현재 리포지토리에 생성한다.
 
 - **$ git init**
 
@@ -129,6 +144,7 @@
 
 
 
+
 ### git log
 
 - 이전 commit들을 모두 둘러볼 수 있게 해준다.
@@ -199,22 +215,26 @@
 
 
 
+
 ### git push
 
-- **$ git push [origin(원격 저장소 별칭)] [master(로컬 브랜치)]** -> GitHub 계정 입력 후 동기화
+- 로컬에 있는 모든 브랜치는 원격에 자신의 이름과 동일한 이름의 브랜치를 갖고 있다.
+- 하여, 브랜치1에서 "git push origin 브랜치2"를 하면 해당 브랜치1이 아니라 브랜치2에서 push가 일어난다.
+- 이런 원격에 존재하는 브랜치1/브랜치2, 로컬에 존재하는 브랜치1/브랜치2를 연결해 주는 것이 push -u이다.
+- 한번 브랜치 ㄴ간의 연결이 완료되면, git push로 자동으로 push가 된다.
+
+- **$ git push <origin(원격 저장소 별칭)> <master(로컬 브랜치)>** -> GitHub 계정 입력 후 동기화
   - 원격 저장소로 git으로 관리한 버전내용(commit)들을 push 함
 
-- **$ git push -u origin [로컬 브랜치] --force**
+- **$ git push -u <origin(원격 저장소 별칭)> <로컬 브랜치> --force**
   - rebase를 사용하여 강제 push가 필요한 경우 사용한다.
 
-- **$ git push -u origin [로컬 브랜치]**
-  - **현재 로컬 브랜치**에서 생성된 커밋들을 **원격저장소로** 올린다.
-  - -u 옵션으로 업스트림 등록할 수 있다.
+- **$ git push -u <origin(원격 저장소 별칭)> <로컬 브랜치>**
+- **$ git push --set-upstream <origin(원격 저장소 별칭)> <로컬 브랜치>**
+  - **로컬 저장소에 존재하는 <로컬 브랜치>**를 **원격 저장소의 동일 명을 갖는 브랜치로** 올린다.
+  - 다른 브랜치에서 작업을 하고 있다가 git push 
 
-- **$ git push --set-upstream [origin(원격 저장소)] [원격 브랜치]**
-  - **현재 로컬 브랜치**에서 생성된 커밋들을 새롭게 지정한 upstream **원격저장소 branch**로 올린다.
-
-- **$ git push <원격저장소> <태그 이름>**
+- **$ git push <origin(원격 저장소 별칭)> <태그 이름>**
   - 원격 저장소에 tag를 push 한다.
   - tag만 push하고, 다른 commit은 push하지 않는다.
 
@@ -232,7 +252,7 @@
   - 즉, **원격의 내용을 가져오고(fetch), 원격의 내용을 반영하여 로컬의 버전을 맞춰 올린다.(merge)**
 
 - **$ git pull \<원격 저장소명(origin)> \< 원격 저장소 branch명(master)>**
-  - 원격저장소에서 fetch 명령어로 가져온 뒤, merge까지 한번에 수행하여 실제 파일의 내용이 변경되는 명령어
+  - 원격저장소의 upstream에서 로컬저장소의 downstream으로, fetch 명령어로 가져온 뒤, merge까지 한번에 수행하여 실제 파일의 내용이 변경되는 명령어
 
 - **$ git fetch \<원격 저장소명(origin)>**
   - fetch 명령어를 통해서 변경된 내용을 가져온다.
