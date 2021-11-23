@@ -109,7 +109,7 @@
   - **원격 저장소에 push한 브랜치는 rebase하지 않는 것이 원칙이다!**
     - 원격 저장소에 push한 브랜치를 다른 곳 앞으로 rebase하면, 내용이 유지되면서 위에 더 추가되는 양상이 아니라, 아상하게 꼬여버리는 수가 있다.
 
-<img src="https://user-images.githubusercontent.com/59442344/136898606-222c1156-7a87-4a92-a3c3-62223553abe3.png" width="70%" height="23%">
+<img src="https://user-images.githubusercontent.com/59442344/142980354-41948300-39ca-4896-9210-56440d6f64f4.png" width="70%" height="23%">
 
 
 - **amend** : 새로운 커밋 없이 마지막 커밋 내용 혹은 커밋 메세지를 변경하는 방법이다.
