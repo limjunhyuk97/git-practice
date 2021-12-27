@@ -250,3 +250,12 @@ git push -u <원격저장소 지정 (origin)> <로컬저장소 지정(master)>
 ```git
 git remote set-url origin https://YOURUSERNAME@github.com/USERNAME/REPOSITORY.git 
 ```
+
+- **원격 저장소 이름 변경에서 발생한 오류 해결**
+  - "remote에 local에 없는 사항이 들어있으므로 업데이트가 거부되었습니다." , push 전에 remote 변경 사항을 추가해주어야 함.
+    - git remote remove origin
+    - git remote add origin 원격저장소주소
+  - git push 시도 , "현재 branch에 upstream branch가 없습니다. git push --set-upstream origin main" 요구
+  - git push --set-upstream origin main 시도 , "또 다른 저장소에서 같은 저장소로 push 할때 문제 발생, (git pull 등으로) remote 변경사항 먼저 포함하기를 요구"
+    - git pull origin main : remote 에서 pull 수행
+    - git push --set-upstream origin main : origin(remote)의 main branch
