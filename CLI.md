@@ -124,6 +124,8 @@
   - **변경한 내용은 워킹트리에서 사라진다.**
   - 또한, 아예 사라지기에, git status로 확인하면, working tree가 깨끗하다고 나온다.
 
+- **$ git reset**
+  - staging 된 명령을 unstage 된 상태로 바꾼다.
 
 
 
@@ -309,6 +311,9 @@
 
 - **$ git remote remove origin**
   - 원래 연결되어 있던 원격 리포지토리 주소와의 연결을 해제한다.
+
+- **$ git remote add upstream \<원격 저장소 주소>**
+  - clone 해 온 remote가 아닌 실제 협업이 일어나고 있는 공간에 대한 upstream을 설정한다.
 
 
 
