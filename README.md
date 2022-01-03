@@ -259,3 +259,8 @@ git remote set-url origin https://YOURUSERNAME@github.com/USERNAME/REPOSITORY.gi
   - git push --set-upstream origin main 시도 , "또 다른 저장소에서 같은 저장소로 push 할때 문제 발생, (git pull 등으로) remote 변경사항 먼저 포함하기를 요구"
     - git pull origin main : remote 에서 pull 수행
     - git push --set-upstream origin main : origin(remote)의 main branch
+
+- **이미 commit 된 파일들에 대해서 .gitignore 적용하기**
+  - git rm -r --cached .
+  - git add .
+  - git commit -m "적용할 커밋 메시지"
