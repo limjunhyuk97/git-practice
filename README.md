@@ -258,4 +258,8 @@ git remote set-url origin https://YOURUSERNAME@github.com/USERNAME/REPOSITORY.gi
   - git push 시도 , "현재 branch에 upstream branch가 없습니다. git push --set-upstream origin main" 요구
   - git push --set-upstream origin main 시도 , "또 다른 저장소에서 같은 저장소로 push 할때 문제 발생, (git pull 등으로) remote 변경사항 먼저 포함하기를 요구"
     - git pull origin main : remote 에서 pull 수행
-    - git push --set-upstream origin main : origin(remote)의 main branch
+    - git push --set-upstream origin main : origin(remote)의 main branch를 upstream 으로 연결
+
+- **수정 이전으로 git을 사용하여 돌리는 방식**
+  - **git reset --hard** : 수정한 내용들을 다 제거하고, 가장 최근 commit으로 되돌린다.
+  - **git checkout --(filename)** : 특정 파일에 대한 수정사항을 제거하고, 가장 최근 commit으로 되돌린다.
