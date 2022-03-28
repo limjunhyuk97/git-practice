@@ -1,5 +1,8 @@
 # Git with CLI
 
+
+
+
 ## CLI Git Command
 
 - 새로운 로컬 저장소의 생성 : git init
@@ -14,9 +17,12 @@
 - 커밋 사이 HEAD 이동 : git checkout
 - 커밋 사이 Branch 이동 : git reset, git rebase, git revert
 
-## .git 로컬 초기 생성
 
-- **git init 생성**
+
+
+## 빈번한 사용 1 - .git 로컬 초기 생성
+
+- **git init / 생성**
   - 리포지토리를 만들고, 해당리포지토리 안으로 들어간다.
   - git init
   - git config --global user.name
@@ -25,9 +31,25 @@
   - git pull origin main : origin 의 main branch에서 현재 내 로컬의 master(혹은 main) 브랜치로 가져온다.
   - git branch : 현재 로컬과 원격에서 끌어온 브랜치간의 이름이 맞는지 확인한다. (맞지 않으면 git branch -m)
 
-- **git clone 생성**
+- **git clone / 생성**
   - 리포지토리 째로 생성해버리기 때문에, clone 하면 그 위치에 원격 리포지토리 내용 그대로 생성됨
   - 들어가서 커밋 및 작업 하면 됨
+
+
+
+
+## 빈번한 사용 2 - upstream으로부터 fetching
+
+- git remote update
+  - 로컬에 있는 모든 remote 정보를 업데이트하고 fetch를 수행한다.
+  - upstream 에 대한 fetch를 수행한다.
+  - origin에 대한 fetch를 수행한다.
+- git fetch upstream
+  - upstream 저장소를 fetch 한다.
+- git rebase upstream/<branch 명>
+  - 즉, 현재 branch 에서 원본 저장소(upstream)의 마지막 commit을 반영하여 rebase 진행
+  - 결과적으로 upstream으로 현재 로컬 브랜치를 최신화 할 수 있다.
+
 
 
 ### git init
@@ -257,8 +279,10 @@
   - 원격저장소의 upstream에서 로컬저장소의 downstream으로, fetch 명령어로 가져온 뒤, merge까지 한번에 수행하여 실제 파일의 내용이 변경되는 명령어
 
 - **$ git fetch \<원격 저장소명(origin)>**
-  - fetch 명령어를 통해서 변경된 내용을 가져온다.
- 
+  - merge 하지 않고, 원격 저장소의 변경된 내용을 가져온다.
+
+- **$ git fetch \<원본 저장소명(upstream)>**
+  - merge 하지 않고, 원본 저장소의 변경된 내용을 가져온다.
 
 
 
@@ -304,6 +328,8 @@
 
 - **$ git remote -v**
   - 해당 로컬 리포지토리와 연결되어있는 remote 저장소의 단축이름과 주소URL을 알 수 있다.
+    - origin : 원격저장소 주소
+    - upstream : 원본저장소 주소
 
 - **$ git remote add origin \<원격 저장소 주소>**
   - 로컬 저장소에 원격 저장소(GitHub)의 주소를 알려준다.
@@ -313,7 +339,10 @@
   - 원래 연결되어 있던 원격 리포지토리 주소와의 연결을 해제한다.
 
 - **$ git remote add upstream \<원격 저장소 주소>**
-  - clone 해 온 remote가 아닌 실제 협업이 일어나고 있는 공간에 대한 upstream을 설정한다.
+  - 원본 저장소의 주소를 알려준다.
+
+- **$ git remote update**
+  - origin의 원격저장소와 upstream의 원본저장소의 최신 사항들을 가져온다.
 
 
 

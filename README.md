@@ -263,3 +263,10 @@ git remote set-url origin https://YOURUSERNAME@github.com/USERNAME/REPOSITORY.gi
 - **수정 이전으로 git을 사용하여 돌리는 방식**
   - **git reset --hard** : 수정한 내용들을 다 제거하고, 가장 최근 commit으로 되돌린다.
   - **git checkout --(filename)** : 특정 파일에 대한 수정사항을 제거하고, 가장 최근 commit으로 되돌린다.
+    - git push --set-upstream origin main : origin(remote)의 main branch
+
+- **이미 commit 된 파일들에 대해서 .gitignore 적용하기**
+  - git rm -r --cached .
+  - git add .
+  - git commit -m "적용할 커밋 메시지"
+
