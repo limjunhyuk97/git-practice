@@ -25,9 +25,11 @@
 - **git init / 생성**
   - 리포지토리를 만들고, 해당리포지토리 안으로 들어간다.
   - git init
-  - git config --global user.name
-  - git config --global user.mail
+  - git config --global(/local) user.name
+  - git config --global(/local) user.mail
   - git remote add origin 원격저장소주소
+  - .git/config의 url에 user_info로 personal token 저장 (password 대용)
+  - git config --global(/local) credential.helper cache 설정 (personal token caching 하여 비밀번호 입력 생략) 
   - git pull origin main : origin 의 main branch에서 현재 내 로컬의 master(혹은 main) 브랜치로 가져온다.
   - git branch : 현재 로컬과 원격에서 끌어온 브랜치간의 이름이 맞는지 확인한다. (맞지 않으면 git branch -m)
 
@@ -74,7 +76,7 @@
   - --local : 지역 옵션을 설정한다.(현재 Git 저장소에만 유용한 옵션), 잠시 다른 컴휴터에서 git 사용시 사용 가능.
   - --system : 시스템 환경 옵션을 설정한다.(PC 사용자 전체를 위한 옵션)
   - 우선순위 : 지역 > 전역 > 시스템
-  - **지역에 대한 옵션을 따로 제공하지 않으면**, **local 옵션으로 받아들인다.**
+  - **지역에 대한 옵션을 따로 제공하지 않으면**, **global 옵션으로 받아들인다.**
 
 - **--unset**
   - 설정한 내용을 제거한다.
@@ -109,6 +111,10 @@
 - **$git config --system --unset \<옵션명>**
   - 시스템 옵션으로 설정한 어떤 값을 제거한다.
 
+- **git config --global credential.helper cache **
+  - 원격 레포와 상호작용 (clone, pull, push) 시에 이메일과 패스워드를 물어본다.
+  - 이때 패스워드 대신에 settings에서 발급한 personal token을 사용할 수 있다.
+  - 이 personal token을 매번 타이핑 치는 것이 번거로울 수 있으므로, 이 경우 cache를 설정한다.
 
 
 
